@@ -1,0 +1,116 @@
+{
+  "design_system": {
+    "identity": {
+      "name": "E1_Brutalist_Blog",
+      "archetype": "Neo-Brutalist / Anti-Design",
+      "core_principles": [
+        "Raw over Refined: Exposed grids, default system fonts mixed with bold display type.",
+        "Content is Structure: The text itself forms the layout.",
+        "High Contrast: Pure black and white with one electric accent color.",
+        "Asymmetry: Break the grid intentionally to create tension."
+      ]
+    },
+    "typography": {
+      "font_family": {
+        "headings": "Space Grotesk, sans-serif",
+        "body": "JetBrains Mono, monospace",
+        "accent": "Syne, sans-serif"
+      },
+      "scale": {
+        "h1": "text-6xl md:text-8xl font-bold tracking-tighter uppercase leading-[0.9]",
+        "h2": "text-4xl md:text-6xl font-bold tracking-tight uppercase border-b-4 border-current w-full",
+        "h3": "text-2xl md:text-3xl font-bold uppercase",
+        "body": "text-base md:text-lg leading-relaxed",
+        "caption": "text-xs uppercase tracking-widest"
+      },
+      "imports": [
+        "@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;700&family=Syne:wght@700;800&display=swap');"
+      ]
+    },
+    "colors": {
+      "palette": {
+        "light": {
+          "background": "#FFFFFF",
+          "foreground": "#000000",
+          "primary": "#0000FF",
+          "secondary": "#F0F0F0",
+          "accent": "#FF4D00",
+          "border": "#000000"
+        },
+        "dark": {
+          "background": "#050505",
+          "foreground": "#FFFFFF",
+          "primary": "#CCFF00",
+          "secondary": "#1A1A1A",
+          "accent": "#FF00FF",
+          "border": "#FFFFFF"
+        }
+      },
+      "usage": {
+        "borders": "border-2 border-black dark:border-white",
+        "hover_states": "hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-0"
+      }
+    },
+    "layout": {
+      "grid_system": "grid grid-cols-1 md:grid-cols-12 gap-0 border-l-2 border-black dark:border-white",
+      "container": "max-w-none mx-auto px-4 md:px-8 border-r-2 border-black dark:border-white min-h-screen",
+      "spacing": {
+        "section_padding": "py-24 md:py-32",
+        "element_gap": "gap-8"
+      }
+    },
+    "components": {
+      "buttons": {
+        "primary": "bg-primary text-white dark:text-black px-8 py-4 font-bold uppercase tracking-widest border-2 border-black dark:border-white hover:translate-x-1 hover:translate-y-1 hover:shadow-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition-all",
+        "secondary": "bg-transparent text-current px-8 py-4 font-bold uppercase border-2 border-current hover:bg-current hover:text-background transition-colors"
+      },
+      "cards": {
+        "blog_post": "border-b-2 border-black dark:border-white p-8 hover:bg-secondary transition-colors group relative overflow-hidden",
+        "feature": "border-2 border-black dark:border-white p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)]"
+      },
+      "inputs": {
+        "default": "bg-transparent border-2 border-black dark:border-white p-4 font-mono focus:ring-0 focus:outline-none focus:bg-secondary placeholder:uppercase placeholder:text-current/50"
+      }
+    },
+    "visual_enhancers": {
+      "marquee": "whitespace-nowrap overflow-hidden border-y-2 border-black dark:border-white py-4 font-mono uppercase text-xl",
+      "cursor": "custom-cursor-dot",
+      "textures": "bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 fixed inset-0 pointer-events-none z-50"
+    },
+    "motion": {
+      "hover": "transition-transform duration-100 ease-linear",
+      "page_transition": "animate-in fade-in slide-in-from-bottom-4 duration-500",
+      "scroll": "lenis-smooth-scroll"
+    },
+    "assets": {
+      "images": {
+        "hero_abstract": "https://images.unsplash.com/photo-1758846946153-b3ca50ac5778?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "hero_architecture": "https://images.unsplash.com/photo-1764209343170-75460c0b52bf?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "post_retro_tv": "https://images.unsplash.com/photo-1601415104543-6f2d703a21d1?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "post_imac": "https://images.unsplash.com/photo-1649877508777-1554357604eb?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "post_concrete_stairs": "https://images.unsplash.com/photo-1764572984487-9b330bd2f399?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "post_concrete_corner": "https://images.unsplash.com/photo-1761543591927-0efde0ad3e8f?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "author_portrait": "https://images.unsplash.com/photo-1627776880085-8070322d8298?crop=entropy&cs=srgb&fm=jpg&q=85"
+      },
+      "icons": "lucide-react (use sharp, geometric icons)"
+    },
+    "accessibility": {
+      "contrast": "Ensure 4.5:1 ratio. Use pure black/white for text.",
+      "focus_states": "focus:outline-none focus:ring-4 focus:ring-primary focus:ring-offset-2"
+    }
+  },
+  "instructions_to_main_agent": {
+    "general": "Implement a 'Brutalist' design. Avoid rounded corners (use rounded-none). Use thick borders (border-2 or border-4). Use the provided Google Fonts. The layout should feel like a raw grid.",
+    "layout_structure": "Wrap the main content in a container with a visible border. Use CSS Grid to create distinct sections separated by borders.",
+    "components": "Customize Shadcn components to remove rounded corners and shadows. Replace them with hard borders and 'neo-brutalist' offsets.",
+    "dark_mode": "Implement a toggle that inverts the entire color scheme. Light mode = White bg/Black text. Dark mode = Black bg/White text.",
+    "animations": "Use 'Marquee' components for section dividers. Add hover effects that sharply translate elements (e.g., hover:-translate-y-1 hover:translate-x-1)."
+  },
+  "universal_guidelines": [
+    "Do not use gradients.",
+    "Do not use rounded corners (unless creating a circle for a specific reason).",
+    "Use uppercase text for labels and small headers.",
+    "Ensure all borders are visible and high-contrast.",
+    "Use 'data-testid' for all interactive elements."
+  ]
+}
